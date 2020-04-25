@@ -1,7 +1,4 @@
 require 'tty-prompt'
-require 'faker'
-require 'colorize'
-
 class Display < TTY::Prompt
   attr_accessor :username, :choice
   
@@ -23,26 +20,26 @@ class Display < TTY::Prompt
   end
 end
 
-prompt = Display.new
-loop do 
-  system 'clear'
-  hello = prompt.select("what would you like to do #{prompt.username}?", prompt.options_array(prompt.username))
+# prompt = Display.new
+# loop do 
+#   system 'clear'
+#   hello = prompt.select("what would you like to do #{prompt.username}?", prompt.options_array(prompt.username))
 
-  if prompt.menu_input(hello) == 'Login' || prompt.menu_input(hello) == 'Change username'
-    choice = prompt.select("What type of username would you like?", %w[Random Custom])
-    if choice == 'Random'
-      prompt.username=(Faker::FunnyName.name)
-    else
-      username = prompt.ask("Please enter your username!", required: true)
-      prompt.username=(username)
-    end
-  elsif prompt.menu_input(hello) == 'Play'
-    puts 'enters game loop'
-  elsif prompt.menu_input(hello) == 'Quit'
-    puts 'goodbye'.colorize(:blue)
-    break
-  end
-end
+#   if prompt.menu_input(hello) == 'Login' || prompt.menu_input(hello) == 'Change username'
+#     choice = prompt.select("What type of username would you like?", %w[Random Custom])
+#     if choice == 'Random'
+#       prompt.username=(Faker::FunnyName.name)
+#     else
+#       username = prompt.ask("Please enter your username!", required: true)
+#       prompt.username=(username)
+#     end
+#   elsif prompt.menu_input(hello) == 'Play'
+#     puts 'enters game loop'
+#   elsif prompt.menu_input(hello) == 'Quit'
+#     puts 'goodbye'.colorize(:blue)
+#     break
+#   end
+# end
 
 
 
