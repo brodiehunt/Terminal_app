@@ -1,6 +1,6 @@
 require 'tty-prompt'
 class Display < TTY::Prompt
-  attr_accessor :username, :choice
+  attr_accessor :username
   
   def initialize
     super

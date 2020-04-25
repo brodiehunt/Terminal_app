@@ -1,5 +1,5 @@
 class Game 
-  attr_accessor :game_stage
+  attr_accessor :game_stage, :score
   def initialize
     @score = 0 
     @game_stage = 'start'
