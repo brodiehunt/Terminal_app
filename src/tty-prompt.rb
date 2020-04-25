@@ -38,7 +38,7 @@ loop do
     end
   elsif prompt.menu_input(hello) == 'Play'
     puts 'enters game loop'
-  else 
+  elsif prompt.menu_input(hello) == 'Quit'
     puts 'goodbye'.colorize(:blue)
     break
   end

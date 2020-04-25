@@ -14,10 +14,16 @@ coin = Coin.new
 update do 
   clear
   game.draw
-  trump.move_trump
-  trump.check_borders
-  coin.draw
-  trump.draw
+  unless trump.hit_itself
+    trump.move_trump
+    trump.check_borders
+    coin.draw
+    trump.draw
+  end
+  if coin.trump_collect?(trump.collision_x, trump.collision_y)
+    coin.change_location
+    trump.increase_size
+  end
 end
 
 on :key_down do |event|

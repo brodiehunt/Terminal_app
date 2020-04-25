@@ -30,9 +30,9 @@ class Trump
     if @direction == 'w' && collision_y.zero?
       @direction = %w[a d].sample
     elsif @direction == 's' && collision_y == HEIGHT - 1
-      @direction == %[a d].sample
+      @direction = %w[a d].sample
     elsif @direction == 'a' && collision_x.zero?
-      @direction == %w[w s].sample
+      @direction = %w[w s].sample
     elsif @direction == 'd' && collision_x == WIDTH - 1
       @direction = %w[w s].sample
     end
@@ -62,5 +62,13 @@ class Trump
     front_of_trump[1]
   end
 
-
+  def trump_length
+    trump = @location.dup
+    trump.delete(front_of_trump)
+    trump.length
+  end
+  
+  def hit_itself
+    @location.length == trump_length + 2
+  end
 end
