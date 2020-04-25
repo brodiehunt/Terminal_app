@@ -13,15 +13,23 @@ coin = Coin.new
 
 update do 
   clear
-  # game.draw
+  game.draw
+  trump.move_trump
+  trump.check_borders
   coin.draw
   trump.draw
 end
 
 on :key_down do |event|
   case event.key
-  when 'm'
-    close
+  when 'd'
+    trump.direction=(event.key) unless trump.direction == 'a'
+  when 'a'
+    trump.direction=(event.key) unless trump.direction == 'd'
+  when 'w'
+    trump.direction=(event.key) unless trump.direction == 's'
+  when 's'
+    trump.direction=(event.key) unless trump.direction == 'w'
   end
 end
 
