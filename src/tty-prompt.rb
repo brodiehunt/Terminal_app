@@ -9,9 +9,9 @@ class Display < TTY::Prompt
 
   def options_array(username)
     if username == 'user'
-      [{ name: 'Play', disabled: '(Login first)'}, 'Login', 'Quit']
+      [{ name: 'Play', disabled: '(Create username first)'}, 'Create Username', 'Quit']
     else
-      ['Play', { name: 'Login', disabled: '(Username already accepted)'}, 'Change username', 'Quit']
+      ['Play', { name: 'Create Username', disabled: '(Username already accepted)'}, 'Change username', 'Quit']
     end
   end
   

@@ -21,11 +21,20 @@ fantastic_sample = Sound.new('./../media/fantastic.wav')
 dream_dead_sample = Sound.new('./../media/dream_dead.wav')
 song.play
 prompt = Display.new
+
 loop do 
   system 'clear'
-  hello = prompt.select("what would you like to do #{prompt.username}?", prompt.options_array(prompt.username))
+  puts '
+      __  ___                          ________                 
+     /  |/  /___  ____  ___  __  __   / ____/ /_  ____ _________ 
+    / /|_/ / __ \/ __ \/ _ \/ / / /  / /   / __ \/ __ `/ ___/ _ \ 
+   / /  / / /_/ / / / /  __/ /_/ /  / /___/ / / / /_/ (__  )  __/ 
+  /_/  /_/\____/_/ /_/\___/\__, /   \____/_/ /_/\__,_/____/\___/ 
+                          /____/                                    '
+  
+  menu = prompt.select("what would you like to do #{prompt.username}?", prompt.options_array(prompt.username))
 
-  if prompt.menu_input(hello) == 'Login' || prompt.menu_input(hello) == 'Change username'
+  if prompt.menu_input(menu) == 'Create Username' || prompt.menu_input(menu) == 'Change username'
     choice = prompt.select("What type of username would you like?", %w[Random Custom])
     if choice == 'Random'
       prompt.username=(Faker::FunnyName.name)
@@ -33,13 +42,15 @@ loop do
       username = prompt.ask("Please enter your username!", required: true)
       prompt.username=(username)
     end
-  elsif prompt.menu_input(hello) == 'Play'
+  elsif prompt.menu_input(menu) == 'Quit'
+    break
+  elsif prompt.menu_input(menu) == 'Play'
     
     update do 
       clear
       game.draw
       close if game.game_stage == 'quit'
-      if game.game_stage == 'play'
+      if game.game_stage == 'play' || game.game_stage == 'rescue'
         enemy.trump_collide?(trump.front_of_trump)
         unless trump.hit_itself || enemy.enemy_collide
           trump.move_trump
@@ -66,12 +77,16 @@ loop do
     on :key_down do |event|
       case event.key
       when 'd'
+        game.game_stage= 'play'
         trump.direction=(event.key) unless trump.direction == 'a'
       when 'a'
+        game.game_stage= 'play'
         trump.direction=(event.key) unless trump.direction == 'd'
       when 'w'
+        game.game_stage= 'play'
         trump.direction=(event.key) unless trump.direction == 's'
       when 's'
+        game.game_stage= 'play'
         trump.direction=(event.key) unless trump.direction == 'w'
       when 'r'
         trump = Trump.new
@@ -83,6 +98,8 @@ loop do
         game.game_stage= 'play'
       when 't'
         game.game_stage= 'quit'
+      else 
+        game.game_stage= 'rescue'
       end
     end
     show
