@@ -25,15 +25,23 @@ The update method allows us to enter the update loop and make changes to the gam
 ## User Interaction and Experience
 
 - The user will initially be greeted by a prompt which will allow them to either create username or quit the application. The tty-prompt gem is used for this prompt the select method used automatically displays user controls for navigating the prompt. In this case it is the arrow keys up and down, and enter to select. 
-- The user will then be taken to another menu where they are prompted to either choose a random or custom username. If a random username is chosen they will be taken back to the initial menu prompt, but now they will be able to select the play option. If the user chooses the custom option, they will be asked to create a username, if the try to enter no username and continue, they will recieve a message telling them that a username must be provided. Once they have entered a valid username, they will be taken back to the main menu prompt where they can quit, change username, or play the game. 
+- ![initial_prompt](/Users/brodiehunt/Documents/FLEXTRACK/terminal_app/docs/initial_prompt.png)
+- The user will then be taken to another menu where they are prompted to either choose a random or custom username. If a random username is chosen they will be taken back to the initial menu prompt, but now they will be able to select the play option, or how to play option. If the user chooses the custom option, they will be asked to create a username, if the try to enter no username and continue, they will recieve a message telling them that a username must be provided. Once they have entered a valid username, they will be taken back to the main menu prompt where they can quit, change username, find out how to play, or play. 
+- ![username_option](/Users/brodiehunt/Documents/FLEXTRACK/terminal_app/docs/username_option.png)
+- ![username_validate](/Users/brodiehunt/Documents/FLEXTRACK/terminal_app/docs/username_validate.png)
+- ![second_prompt](/Users/brodiehunt/Documents/FLEXTRACK/terminal_app/docs/second_prompt.png)
+- ![how_to_play](/Users/brodiehunt/Documents/FLEXTRACK/terminal_app/docs/how_to_play.png)
 - If the user decides to change their username, they will be looped back into the username selection experience. If the user selects quit, the program shuts down. If the user selects play, the game window opens and the update loop is initiated. 
 - When the user first enters the game window, they are greeted with a introduction screen which informs them of the available user inputs. These are 'wsad' for movement, 'r' to restart, 't' to quit, and 'any other button' to play. 
+- ![start_game](/Users/brodiehunt/Documents/FLEXTRACK/terminal_app/docs/start_game.png)
 - When the user presses any button other than 'r' or 't' the game begins and the snake object, coin object, and score are all printed to the screen. The user then has control of the game using the outlined input function until they die. If the user presses a button that does not have a specific function (anything that isn't wsadrt) a small prompt will appear on the screen telling them to press a valid key. 
+- ![in_game](/Users/brodiehunt/Documents/FLEXTRACK/terminal_app/docs/in_game.png)
 - When the user dies, an end game screen will appear which tells the user their score, and how to continue from their. If the user would like to play again, they are told to press 'r', if they would like to quit, they are told to press 't'. If the user input is 'r', they are taken to the original starting page showing them how to play the game. If the use input is 't', the window is closed and the application ends.
+- ![End_game](/Users/brodiehunt/Documents/FLEXTRACK/terminal_app/docs/End_game.png)
 
 ## Control Flow Diagram
 
-![flowchart](/Users/brodiehunt/Documents/FLEXTRACK/terminal_app/flowchart.png)
+![flowchart](/Users/brodiehunt/Documents/FLEXTRACK/terminal_app/docs/flowchart.png)
 
 ## Implementation Plan
 
@@ -47,3 +55,18 @@ The update method allows us to enter the update loop and make changes to the gam
   | Update loop                 | This is where all the methods of each object will be called and condition statements and control flow be implemented in order to make the game run smoothly. This function is from the ruby 2d gem, and it is an infinite loop that I have set to loop 10 times per second. Each time the loop is called the entire window is cleared and then redrawn depending on the conditions that control the game. | Implement conditional statements to allow particular methods of each object to be called under the right circumstances. (Priority = high) |
   | User input and game control | This is done using ruby 2d and allows the window to capture keyboard events. This function will be how to user controls the the snake, navigates through game stages and quits the program. It is here that the direction instance variable of the snake will be set when the right conditions are met. | Allow user to change direction instance variable of the snake object if they press the required key. (Priority = high)            Set a conditional statement that forbids the snake from changing direction so it would enter itself (if up cannot go down) (priority = high)                                                        Add functionality to a key (r) so the game can be restarted (priority = high)              Add functionality to a key (t) so the game can be exited (priority = high)                 Add functionality to every other key to allow the use to start playing the game.  (priority = high) |
 
+## Status Update
+
+#### Wednesday 22nd 
+
+ I used most of today to get an understanding of the ruby2d gem and how I would apply it to make my game of snake. I was able to create an extremely rough version with limited functionality. But the core concepts of the snake, coins and score were all there. Spent some time focusing on my implementation plan and how I would integrate the game which uses ruby2d with a menu run in the terminal.
+
+#### Saturday 25th
+
+Today I started Implementing all of what I had experimented with and built a lot of my app from scratch. I created my GitHub repository for my project and have pushed my code to it a few times today. I have completed a lot of my software development plan. I am using my trello board to try to stay on top of what I need to do. 
+
+#### Sunday 26th
+
+Today I added my software development plan to a readme file and pushed it to github. I also added enemies to my game, and made some changes to the initial prompt, which included creating a 'how to play' option which describes how to play the game before you enter the window. 
+
+####  
