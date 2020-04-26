@@ -43,9 +43,9 @@ loop do
       prompt.username=(username)
     end
   elsif prompt.menu_input(menu) == 'How to Play'
-    puts "Money Chase is a adaptation of the game snake. To control the trump use the keys w,s,a,d for the movements
-up, down, left, right respectively. Press any key to start the game when you enter the window. Press 't' to quit
-at any time, or 'r' to restart at anytime."
+    puts "Money Chase is a adaptation of the game snake. Collect the coins but stay away from the evil read squares.
+To control the trump use the keys w,s,a,d for the movements up, down, left, right respectively. Press any key to start 
+the game when you enter the window. Press 't' to quit at any time, or 'r' to restart at anytime."
     sleep 15
   elsif prompt.menu_input(menu) == 'Quit'
     break
