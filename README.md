@@ -25,23 +25,23 @@ The update method allows us to enter the update loop and make changes to the gam
 ## User Interaction and Experience
 
 - The user will initially be greeted by a prompt which will allow them to either create username or quit the application. The tty-prompt gem is used for this prompt the select method used automatically displays user controls for navigating the prompt. In this case it is the arrow keys up and down, and enter to select. 
-- ![initial_prompt](/Users/brodiehunt/Documents/FLEXTRACK/terminal_app/docs/initial_prompt.png)
+- ![](/docs/initial_prompt.png)
 - The user will then be taken to another menu where they are prompted to either choose a random or custom username. If a random username is chosen they will be taken back to the initial menu prompt, but now they will be able to select the play option, or how to play option. If the user chooses the custom option, they will be asked to create a username, if the try to enter no username and continue, they will recieve a message telling them that a username must be provided. Once they have entered a valid username, they will be taken back to the main menu prompt where they can quit, change username, find out how to play, or play. 
-- ![username_option](/Users/brodiehunt/Documents/FLEXTRACK/terminal_app/docs/username_option.png)
-- ![username_validate](/Users/brodiehunt/Documents/FLEXTRACK/terminal_app/docs/username_validate.png)
-- ![second_prompt](/Users/brodiehunt/Documents/FLEXTRACK/terminal_app/docs/second_prompt.png)
-- ![how_to_play](/Users/brodiehunt/Documents/FLEXTRACK/terminal_app/docs/how_to_play.png)
+- ![](/docs/username_option.png)
+- ![](/docs/username_validate.png)
+- ![](/docs/second_prompt.png)
+- ![](/docs/how_to_play.png)
 - If the user decides to change their username, they will be looped back into the username selection experience. If the user selects quit, the program shuts down. If the user selects play, the game window opens and the update loop is initiated. 
 - When the user first enters the game window, they are greeted with a introduction screen which informs them of the available user inputs. These are 'wsad' for movement, 'r' to restart, 't' to quit, and 'any other button' to play. 
-- ![start_game](/Users/brodiehunt/Documents/FLEXTRACK/terminal_app/docs/start_game.png)
+- ![](/docs/start_game.png)
 - When the user presses any button other than 'r' or 't' the game begins and the snake object, coin object, and score are all printed to the screen. The user then has control of the game using the outlined input function until they die. If the user presses a button that does not have a specific function (anything that isn't wsadrt) a small prompt will appear on the screen telling them to press a valid key. 
-- ![in_game](/Users/brodiehunt/Documents/FLEXTRACK/terminal_app/docs/in_game.png)
+- ![](/docs/in_game.png)
 - When the user dies, an end game screen will appear which tells the user their score, and how to continue from their. If the user would like to play again, they are told to press 'r', if they would like to quit, they are told to press 't'. If the user input is 'r', they are taken to the original starting page showing them how to play the game. If the use input is 't', the window is closed and the application ends.
-- ![End_game](/Users/brodiehunt/Documents/FLEXTRACK/terminal_app/docs/End_game.png)
+- ![](/docs/End_game.png)
 
 ## Control Flow Diagram
 
-![flowchart](/Users/brodiehunt/Documents/FLEXTRACK/terminal_app/docs/flowchart.png)
+![](/docs/flowchart.png)
 
 ## Implementation Plan
 
