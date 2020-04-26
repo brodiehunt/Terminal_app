@@ -1,3 +1,7 @@
+---
+typora-root-url: ./docs/End_game.png
+---
+
 # README
 
 ## Purpose of Money Chase(snake)
@@ -12,6 +16,8 @@ This feature will be used at the begining of the application. When the program i
 
 #### The Snake
 
+
+
 The snake is an object of the class Trump which is created when the program is run. When the snake object is created, three instance variables are intialized, 'location', 'increase_size' and 'direction'. The location instance is set to a two dimensional array at the left side of the window, the direction is set to right, and increase_size is set to false. The movement of the snake is acheived by deleting the first index in the two dimensional array 'location', and pushing a new array into the two dimensional array in the current direction of the snakes movement. This is all acheived in the class method 'move_trump'. The direction instance variable is given an attribute accessor so it can be changed according to user input, and used outside of the Trump class. The class method draw is responsible to itterating through the two dimensional array and displaying an Image object to the screen at his current coordinates. Conditional control is used to prevent the snake from leaving the screen, or turning directly back into itself. The trump object in the game window will also interact with other objects, causing the game to progress and increase in difficulty. This class also contains methods which allow access to the objects location from outside the class. This is used for collision detection between the snake object, and other objects in the game window. 
 
 #### The Coins
@@ -25,23 +31,16 @@ The update method allows us to enter the update loop and make changes to the gam
 ## User Interaction and Experience
 
 - The user will initially be greeted by a prompt which will allow them to either create username or quit the application. The tty-prompt gem is used for this prompt the select method used automatically displays user controls for navigating the prompt. In this case it is the arrow keys up and down, and enter to select. 
-- ![](/docs/initial_prompt.png)
+- ![initial_prompt](/../initial_prompt.png)
 - The user will then be taken to another menu where they are prompted to either choose a random or custom username. If a random username is chosen they will be taken back to the initial menu prompt, but now they will be able to select the play option, or how to play option. If the user chooses the custom option, they will be asked to create a username, if the try to enter no username and continue, they will recieve a message telling them that a username must be provided. Once they have entered a valid username, they will be taken back to the main menu prompt where they can quit, change username, find out how to play, or play. 
-- ![](/docs/username_option.png)
-- ![](/docs/username_validate.png)
-- ![](/docs/second_prompt.png)
-- ![](/docs/how_to_play.png)
 - If the user decides to change their username, they will be looped back into the username selection experience. If the user selects quit, the program shuts down. If the user selects play, the game window opens and the update loop is initiated. 
 - When the user first enters the game window, they are greeted with a introduction screen which informs them of the available user inputs. These are 'wsad' for movement, 'r' to restart, 't' to quit, and 'any other button' to play. 
-- ![](/docs/start_game.png)
 - When the user presses any button other than 'r' or 't' the game begins and the snake object, coin object, and score are all printed to the screen. The user then has control of the game using the outlined input function until they die. If the user presses a button that does not have a specific function (anything that isn't wsadrt) a small prompt will appear on the screen telling them to press a valid key. 
-- ![](/docs/in_game.png)
 - When the user dies, an end game screen will appear which tells the user their score, and how to continue from their. If the user would like to play again, they are told to press 'r', if they would like to quit, they are told to press 't'. If the user input is 'r', they are taken to the original starting page showing them how to play the game. If the use input is 't', the window is closed and the application ends.
-- ![](/docs/End_game.png)
 
 ## Control Flow Diagram
 
-![](/docs/flowchart.png)
+
 
 ## Implementation Plan
 
