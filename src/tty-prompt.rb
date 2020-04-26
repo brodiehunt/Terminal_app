@@ -11,7 +11,7 @@ class Display < TTY::Prompt
     if username == 'user'
       [{ name: 'Play', disabled: '(Create username first)'}, 'Create Username', 'Quit']
     else
-      ['Play', { name: 'Create Username', disabled: '(Username already accepted)'}, 'Change username', 'Quit']
+      ['Play', { name: 'Create Username', disabled: '(Username already accepted)'}, 'Change username', 'How to Play', 'Quit']
     end
   end
   
