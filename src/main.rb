@@ -98,8 +98,8 @@ loop do
         game.game_stage= 'play'
       when 't'
         game.game_stage= 'quit'
-      else 
-        game.game_stage= 'rescue'
+      # else 
+      #   game.game_stage= 'rescue'
       end
     end
     show
